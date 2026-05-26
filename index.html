@@ -102,58 +102,7 @@
   .meta-item .num { font-size: 22px; font-weight: 700; color: var(--accent); }
   .meta-item .lbl { font-size: 12px; color: var(--muted); }
 
-  /* ===== AFFILIATE CARD ===== */
-  .affili-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-  .affili-card .affili-label {
-    font-size: 10px;
-    color: var(--muted);
-    margin-bottom: 8px;
-    letter-spacing: .08em;
-  }
-  .affili-inner {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-  .affili-thumb {
-    width: 64px;
-    height: 64px;
-    border-radius: 10px;
-    background: #F5F3FF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    flex-shrink: 0;
-  }
-  .affili-body { flex: 1; min-width: 0; }
-  .affili-title {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    line-height: 1.4;
-  }
-  .affili-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .affili-btn {
-    display: block;
-    text-align: center;
-    margin-top: 12px;
-    padding: 10px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: opacity .15s;
-  }
-  .affili-btn:hover { opacity: .85; }
+
 
   /* ===== START BUTTON ===== */
   .start-btn {
@@ -385,15 +334,7 @@
     margin-bottom: 24px;
   }
 
-  /* result affili */
-  .affili-section-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--muted);
-    margin-bottom: 12px;
-    letter-spacing: .05em;
-  }
-  .affili-list { display: flex; flex-direction: column; gap: 12px; }
+
 </style>
 </head>
 <body>
@@ -422,20 +363,6 @@
           <span class="lbl">タイプ</span>
         </div>
       </div>
-    </div>
-
-    <!-- アフィリエイト枠1（スタートページ） -->
-    <div class="affili-card">
-      <div class="affili-label">PR</div>
-      <div class="affili-inner">
-        <div class="affili-thumb">📚</div>
-        <div class="affili-body">
-          <div class="affili-title">認知行動療法の名著<br>「いやな気分よ、さようなら」</div>
-          <div class="affili-desc">認知の歪みを自分で直す方法が学べる世界的ベストセラー</div>
-        </div>
-      </div>
-      <!-- ここをAmazonアソシエイトのリンクに差し替える -->
-      <a href="https://amzn.to/XXXXX" class="affili-btn" target="_blank" rel="noopener">Amazonで見る →</a>
     </div>
 
     <button class="start-btn" onclick="startQuiz()">診断スタート ✨</button>
@@ -488,12 +415,51 @@
     </div>
     <button class="restart-btn" onclick="restart()">もう一度診断する</button>
 
-    <!-- アフィリエイト枠2（結果ページ・タイプ別） -->
-    <div class="affili-section-title">このタイプにおすすめ</div>
-    <div class="affili-list" id="r-affili"></div>
   </div>
 
 </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="margin-top:48px;padding:24px 0 40px;border-top:1px solid var(--border)">
+    <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:16px">
+      本診断はエンターテインメント・教育目的であり、医療的診断・治療の代替ではありません。
+      診断結果はあくまで参考情報です。メンタルヘルスに関するお悩みは、専門の医療機関にご相談ください。
+    </p>
+
+    <details style="margin-bottom:12px">
+      <summary style="font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;margin-bottom:8px">プライバシーポリシー・免責事項</summary>
+      <div style="font-size:12px;color:var(--muted);line-height:1.9;padding:12px;background:var(--card);border-radius:var(--radius-sm);border:1px solid var(--border)">
+        <p style="font-weight:700;margin-bottom:8px">プライバシーポリシー・免責事項</p>
+
+        <p style="margin-bottom:8px"><strong>個人情報の取り扱いについて</strong><br>
+        本サイトは、ユーザーの氏名・メールアドレスなどの個人情報を収集・保存しません。
+        診断の回答データはお使いのブラウザ内のみで処理され、外部サーバーへの送信は行いません。</p>
+
+        <p style="margin-bottom:8px"><strong>アクセス解析について</strong><br>
+        本サイトはVercel Web Analyticsを使用してアクセス状況（ページビュー数・流入元等）を計測しています。
+        Vercel Web Analyticsはプライバシーに配慮した設計で、IPアドレスや個人を特定できる情報を収集・保存しません。
+        Cookieは使用していません。収集されたデータはサイト改善の目的にのみ使用します。
+        詳細はVercelの<a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener" style="color:var(--muted)">プライバシーポリシー</a>をご参照ください。</p>
+
+        <p style="margin-bottom:8px"><strong>免責事項</strong><br>
+        本サイトのコンテンツはエンターテインメント・教育目的であり、医療的診断・治療・カウンセリングの代替となるものではありません。
+        診断結果に基づく行動によって生じた損害について、運営者は一切の責任を負いません。
+        メンタルヘルスに関するお悩みは、専門の医療機関または公的相談窓口にご相談ください。</p>
+
+        <p style="margin-bottom:8px"><strong>著作権について</strong><br>
+        本サイトに掲載されているコンテンツ（文章・デザイン・診断内容等）の著作権は運営者に帰属します。
+        無断転載・複製・商用利用を禁じます。</p>
+
+        <p><strong>プライバシーポリシーの変更について</strong><br>
+        本ポリシーは予告なく変更する場合があります。変更後の内容は本ページに掲載した時点で効力を生じます。</p>
+      </div>
+    </details>
+    <p style="font-size:12px;color:var(--muted);text-align:center;margin-bottom:8px">
+      お問い合わせ：<a href="https://bsky.app/profile/nature57.bsky.social" target="_blank" rel="noopener" style="color:var(--muted)">@nature57.bsky.social</a>（Bluesky）
+    </p>
+    <p style="font-size:11px;color:var(--muted);text-align:center">&copy; 2026 認知の歪みタイプ診断</p>
+  </footer>
+
 <script>
 const Qs = [
   { scene:"LINEで…",
@@ -593,101 +559,61 @@ const Types = {
     desc:"あなたの脳内は白黒二色のモノクロワールド。99点でも「失敗」、少しでも欠点があれば「ダメ」と判定します。グレーゾーンというものが存在せず、物事を極端な二項対立で捉えます。完璧主義と強く結びつくタイプです。",
     tags:["完璧主義","二項対立","白黒思考"],
     advice:"「60点でも合格」という視点を練習してみましょう。次回うまくいかないことがあったら、0〜100のどの点数か採点してみてください。",
-    color:"#6D4AFF",
-    affili:[
-      {emoji:"📚",title:"「完璧主義をやめたら人生が変わった」",desc:"白黒思考から抜け出すヒントが満載",link:"https://amzn.to/XXXXX"},
-      {emoji:"🧘",title:"マインドフルネスアプリ「Calm」",desc:"思考のクセをほぐす瞑想・呼吸法",link:"https://example.com/calm"}
-    ]
+    color:"#6D4AFF"
   },
   over:{name:"永遠ループ予言者",emoji:"🔮",sub:"Overgeneralizer",
     desc:"一度のネガティブな出来事を「いつも」「絶対」「永遠に」という言葉で一般化するのが得意技。過去の失敗から未来を断言し、まるで水晶玉を持った予言者のようです。「また」という言葉があなたのお気に入り。",
     tags:["過度な一般化","いつも","絶対"],
     advice:"「今回は」という言葉を意識して使ってみましょう。一つの経験は一つのデータに過ぎません。",
-    color:"#FF6B6B",
-    affili:[
-      {emoji:"📖",title:"「いやな気分よ、さようなら」",desc:"認知行動療法の世界的ベストセラー",link:"https://amzn.to/XXXXX"},
-      {emoji:"✏️",title:"感情日記ノート",desc:"思考パターンを書いて俯瞰するワーク",link:"https://amzn.to/XXXXX"}
-    ]
+    color:"#FF6B6B"
   },
   fil:{name:"ネガティブフィルター職人",emoji:"🔍",sub:"Mental Filter",
     desc:"100個の良いことと1個の悪いことがあれば、その1個に全集中。まるで砂金取りの逆バージョンで、嫌なことだけをすくい取るフィルターを常に装備しています。良い出来事はスルーするプロです。",
     tags:["選択的注意","ネガティブ集中","良いことを無視"],
     advice:"1日の終わりに「今日良かったこと3つ」を書く習慣を試してみてください。フィルターは外れます。",
-    color:"#3B82F6",
-    affili:[
-      {emoji:"📔",title:"3行ポジティブ日記",desc:"毎日3分で思考が変わるジャーナリング",link:"https://amzn.to/XXXXX"},
-      {emoji:"🎧",title:"ポジティブ心理学オーディオブック",desc:"聴くだけで思考の切り替えを学べる",link:"https://amzn.to/XXXXX"}
-    ]
+    color:"#3B82F6"
   },
   dis:{name:"ポジティブ抹消師",emoji:"🗑️",sub:"Disqualifying the Positive",
     desc:"褒められても「お世辞だ」、うまくいっても「たまたまだ」と打ち消す天才。ネガティブフィルター職人の上位互換で、良いことを積極的に無効化します。ポジティブを受け取ることへの強い抵抗があります。",
     tags:["良いことの無効化","お世辞","たまたま"],
     advice:"「ありがとう」と一言だけ言う練習から。否定の言葉を続けなくていいです。",
-    color:"#10B981",
-    affili:[
-      {emoji:"🌱",title:"「自己肯定感の教科書」",desc:"ポジティブを受け取る力を育てる入門書",link:"https://amzn.to/XXXXX"},
-      {emoji:"💬",title:"オンラインカウンセリング「cotree」",desc:"認定心理士に話せる月額サービス",link:"https://example.com/cotree"}
-    ]
+    color:"#10B981"
   },
   mind:{name:"他人の脳内ハッカー",emoji:"🕵️",sub:"Mind Reader",
     desc:"証拠ゼロなのに他人が何を考えているか「わかる」タイプ。「あの人は絶対私のことが嫌いだ」「馬鹿にしてると思ってる」と確信できます。サイキックの素質あり、ただし的中率は低め。",
     tags:["読心術","証拠なし","決めつけ"],
     advice:"「もしかしてどう思ってる？」と実際に聞いてみましょう。想像と現実はたいてい違います。",
-    color:"#8B5CF6",
-    affili:[
-      {emoji:"📚",title:"「人は話し方が9割」",desc:"コミュニケーション不安を解消するヒント",link:"https://amzn.to/XXXXX"},
-      {emoji:"🧠",title:"認知行動療法ワークブック",desc:"読心術思考を書いて崩すセルフワーク",link:"https://amzn.to/XXXXX"}
-    ]
+    color:"#8B5CF6"
   },
   cat:{name:"最悪シナリオ脚本家",emoji:"🎬",sub:"Catastrophizer",
     desc:"小さなトラブルを一瞬で壮大な大惨事に変換するのが特技。電車が少し遅れれば「人生が終わる」、頭痛がすれば「重病かも」。脳内で最悪の映画を常に上映中。創造力は豊かです。",
     tags:["破局化","最悪を想像","拡大解釈"],
     advice:"「最悪の場合、実際どうなる？」と具体的に書き出してみてください。多くの場合、乗り越えられます。",
-    color:"#F59E0B",
-    affili:[
-      {emoji:"📘",title:"「不安のしくみ」",desc:"不安・心配の認知メカニズムがわかる本",link:"https://amzn.to/XXXXX"},
-      {emoji:"🌿",title:"メンタルヘルスアプリ「Meditopia」",desc:"不安を和らげる瞑想プログラム",link:"https://example.com/meditopia"}
-    ]
+    color:"#F59E0B"
   },
   per:{name:"全責任引き受け番長",emoji:"🏋️",sub:"Personalizer",
     desc:"宇宙のすべての問題が自分のせいだと感じるタイプ。友人が元気なければ「私が何かしたのかも」、天気が悪ければ「私の運のせい」。責任感が強すぎて地球を一人で支えようとしています。",
     tags:["個人化","自分のせい","過責任"],
     advice:"「これは本当に自分のコントロール下にあるか？」と自問する癖をつけましょう。",
-    color:"#6D4AFF",
-    affili:[
-      {emoji:"📕",title:"「境界線（バウンダリー）」",desc:"責任の範囲を整理する自己啓発の名著",link:"https://amzn.to/XXXXX"},
-      {emoji:"💬",title:"オンラインカウンセリング「yorisoi」",desc:"24時間相談できる心理支援サービス",link:"https://example.com/yorisoi"}
-    ]
+    color:"#6D4AFF"
   },
   sho:{name:"べき論の法律家",emoji:"⚖️",sub:"Should Statements",
     desc:"頭の中に分厚い法律書を持ち、「〜すべき」「〜でなければならない」を常に適用しています。自分にも他人にも厳格なルールを課し、違反者（自分含む）を容赦なく裁く内なる裁判官です。",
     tags:["すべき思考","厳格なルール","自己批判"],
     advice:"「〜すべき」を「〜できたらいいな」に置き換えてみましょう。少し息が楽になります。",
-    color:"#059669",
-    affili:[
-      {emoji:"📗",title:"「がんばらない練習」",desc:"すべき思考をゆるめる禅的アプローチ",link:"https://amzn.to/XXXXX"},
-      {emoji:"🧘",title:"ヨガ・ストレッチ動画サブスク",desc:"体を動かして「べき」から離れる習慣",link:"https://example.com/yoga"}
-    ]
+    color:"#059669"
   },
   lab:{name:"ラベリングコレクター",emoji:"🏷️",sub:"Labeler",
     desc:"ミスをすると「私はダメな人間だ」、失恋すると「私は愛されない人間だ」と、行動ではなく自分の存在にラベルを貼ります。コレクションしたラベルで自己像が固定化されていきます。",
     tags:["レッテル貼り","固定化","自己定義"],
     advice:"行動と存在を分けましょう。「失敗した」と「失敗する人間だ」は全く別のことです。",
-    color:"#DC2626",
-    affili:[
-      {emoji:"📙",title:"「嫌われる勇気」",desc:"自己定義を揺さぶるアドラー心理学入門",link:"https://amzn.to/XXXXX"},
-      {emoji:"🎓",title:"Udemy「自己肯定感を高める心理学」",desc:"動画で学べる認知行動療法の基礎",link:"https://example.com/udemy"}
-    ]
+    color:"#DC2626"
   },
   emo:{name:"感情ファクトチェッカー",emoji:"🌡️",sub:"Emotional Reasoner",
     desc:"「こう感じるから、そうに違いない」という論理を使います。不安を感じれば「危険だ」、落ち込めば「本当にダメだ」と感情を現実の証拠として使います。感情は事実だと信じて疑いません。",
     tags:["感情的推論","感情＝事実","主観的確信"],
     advice:"「今感じていることは感情であり、事実とは別だ」と紙に書いてみましょう。",
-    color:"#7C3AED",
-    affili:[
-      {emoji:"📒",title:"「感情の整理ができる人」",desc:"感情と事実を切り分ける実践的な一冊",link:"https://amzn.to/XXXXX"},
-      {emoji:"🎧",title:"Audible 無料体験",desc:"心理学・自己啓発の本を耳で聴く",link:"https://amzn.to/XXXXX"}
-    ]
+    color:"#7C3AED"
   }
 };
 
@@ -758,19 +684,6 @@ function showResult(){
       <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${tp.color}"></div></div>
     </div>`;
   }).join('');
-
-  document.getElementById('r-affili').innerHTML=t.affili.map(a=>`
-    <div class="affili-card">
-      <div class="affili-label">PR</div>
-      <div class="affili-inner">
-        <div class="affili-thumb">${a.emoji}</div>
-        <div class="affili-body">
-          <div class="affili-title">${a.title}</div>
-          <div class="affili-desc">${a.desc}</div>
-        </div>
-      </div>
-      <a href="${a.link}" class="affili-btn" target="_blank" rel="noopener">詳しく見る →</a>
-    </div>`).join('');
 
   show('s-result');
   window.scrollTo({top:0,behavior:'smooth'});
